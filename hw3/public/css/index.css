@@ -1,0 +1,66 @@
+/*author: Mengwen Li*/
+body{
+    background-color: #D3CEAA;
+    font-family: 'Montserrat', sans-serif;
+}
+h1{
+    padding: 0 0 5px 0;
+    text-align: center;
+}
+#author{
+    font-size: 22px;
+    font-style: italic;
+}
+.intro{
+    width: 35%;
+    float: left;
+    border-right: 3px solid #FFF6E5;
+    border-top: 3px solid #FFF6E5;
+    margin: 0;
+    padding: 5px 10px 0 10px;
+    box-sizing: border-box;
+}
+.operation{
+    margin: 0;
+    padding: 0;
+    width: 65%;
+    float: left;
+    border-top: 3px solid #FFF6E5;
+}
+.row{
+    text-align: right;
+    float: left;
+    width: 30%;
+}
+.button-input{
+    padding: 0 0 0 20px;
+}
+.button-input input{
+    width: 80px;
+}
+.op-header{
+    margin: 25px 0 0 0;
+    padding: 0 0 20px 10px;
+}
+.block{
+    padding-left: 20px;
+}
+#list-header{
+    padding-bottom: 10px;
+}
+
+input{
+    margin-left: 20px;
+}
+#list-button{
+    float: left;
+    margin-left: 0px;
+}
+.last-header{
+    float: left;
+    width: 11.8%;
+}
+.last-form{
+    float: left;
+    margin: 26px;
+}
