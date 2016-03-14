@@ -1,0 +1,258 @@
+<!-- Add return button for register! -->
+
+
+<!doctype html>
+<html>
+
+<head>
+    <title>Project ChatRoom</title>
+    <link rel='shortcut icon' type='image/x-icon' href='favicon.ico' />
+    <link rel="stylesheet" href="css/index.css">
+    <link href="css/metro.css" rel="stylesheet">
+    <link href="css/metro-icons.css" rel="stylesheet">
+    <link href="css/metro-responsive.css" rel="stylesheet">
+    <link href="css/metro-schemes.css" rel="stylesheet">
+    <link href="css/docs.css" rel="stylesheet">
+    <link href="css/metro-self.css" rel="stylesheet">
+    <script src="jquery-2.1.3.min.js"></script>
+    <script src="metro.js"></script>
+    <script src="docs.js"></script>
+    <script src="ga.js"></script>
+    <script src="https://cdn.socket.io/socket.io-1.2.0.js"></script>
+    <!-- Add jquery here! -->
+    <script src="//code.jquery.com/jquery-1.10.2.js"></script>
+    <script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+    <script type="text/javascript" src="jquery.titlealert.js"></script>
+</head>
+
+<body>
+    <div id="login" class="setup">
+        <h2>Login to Chat Room</h2>
+        <table>
+            <tr id="username">
+                <div class="input-control modern text iconic">
+                     <input type="text" name="nick-name" id="text-name-login">
+                     <span class="label">You login</span>
+                     <span class="informer">Please enter you login or email</span>
+                     <span class="placeholder">login</span>
+                     <span class="icon mif-user"></span>
+                </div>
+<!--                 <td><span class="table-head">User name: </span></td>
+                <td>
+                    <input type="text" name="nick-name" id="text-name-login">
+                </td> -->
+            </tr>
+            <tr id="password">
+                 <div class="input-control modern password iconic" data-role="input">
+                    <input type="password" name="password" id="text-password-login">
+                    <span class="label">You password</span>
+                    <span class="informer">Please enter you password</span>
+                    <span class="placeholder">Password</span>
+                    <span class="icon mif-lock"></span>
+                    <button class="button helper-button reveal"><span class="mif-looks"></span></button>
+                </div>
+<!--                 <td><span class="table-head">Password: </span></td>
+                <td>
+                    <input type="password" name="password" id="text-password-login">
+                </td> -->
+            </tr>
+        </table>
+        <div class="buttonManage">
+            <input id="login-button" type="button" name="login" value="Login" class="button primary">
+            <input id="register-button" type="button" name="register" value="Register"  class="button success">
+        </div>
+    </div>
+    <!-- Register part -->
+    <div id="register" class="setup" hidden>
+        <h2 class="setupTitle">Login to Chat Room</h2>
+        <table>
+            <tr id="useremail-reg">
+                <div class="input-control modern text iconic">
+                     <input type="text" name="user-email" id="text-email-reg">
+                     <span class="label">You Email</span>
+                     <span class="informer">Please enter you email</span>
+                     <span class="placeholder">Email</span>
+                     <span class="icon mif-mail"></span>
+                </div>
+<!--                 <td><span class="table-head">User email: </span></td>
+                <td>
+                    <input type="text" name="user-email" id="text-email-reg">
+                </td> -->
+            </tr>
+            <tr id="username-reg">
+                 <div class="input-control modern text iconic">
+                     <input type="text" name="user-name" id="text-name-reg">
+                     <span class="label">You Name</span>
+                     <span class="informer">Please enter you name</span>
+                     <span class="placeholder">Name</span>
+                     <span class="icon mif-user"></span>
+                </div>
+<!--                 <td><span class="table-head">User name: </span></td>
+                <td>
+                    <input type="text" name="user-name" id="text-name-reg">
+                </td> -->
+            </tr>
+            <tr id="password-reg">
+                 <div class="input-control modern password iconic" data-role="input">
+                    <input type="password" name="password" id="text-password-reg">
+                    <span class="label">You password</span>
+                    <span class="informer">Please enter you new password</span>
+                    <span class="placeholder">New password</span>
+                    <span class="icon mif-lock"></span>
+                    <button class="button helper-button reveal"><span class="mif-looks"></span></button>
+                </div>
+<!--                 <td><span class="table-head">New password: </span></td>
+                <td>
+                    <input type="password" name="password" id="text-password-reg">
+                </td> -->
+            </tr>
+        </table>
+        <br>
+        <div class="buttonManage">
+            <input id="register-submit-button" type="button" name="register" value="Register" style="border-style:none" class="button success">
+        </div>
+    </div>
+
+    <!-- Chat part -->
+    <div id="chatRoom" hidden>
+        <!-- Add head bar -->
+        <!-- ********************************* -->
+        <div class="app-bar pink">
+            <a class="app-bar-element">Project ChatRoom</a>
+            <div class="head-buttons">
+                <input type="button" id="createchatroom-button" name="create-button" value="Create chat room!" class="button" class="button primary">
+                <input type="button" id="profile-button" name="profile-button" value="profile" class="button primary">
+                <input type="button" id="logout-button" name="logout-button" value="logout" class="button primary">
+                <!-- Modified here! -->
+            </div>
+            <!-- chat room tags here! -->
+        </div>
+        <!-- ********************************* -->
+        <div class="side-bar">
+            <div class="sidebar2">
+
+                <div class="accordion" data-role="accordion">
+                    <div class="frame">
+                        <div class="heading margin10">Friends</div>
+                        <div class="content" id="friends-list">
+                            <!-- <li>Subitem 1</li>
+                            <li class="disabled"><a>Subitem 1</a></li> -->
+                        </div>
+                    </div>
+                </div>
+                <div class="accordion" data-role="accordion">
+                    <div class="frame">
+                        <div class="heading margin10">Online Users</div>
+                        <div class="content" id="logged-in-users">
+                            <!-- <li><a>Subitem 1</a></li>
+                            <li class="disabled"><a>Subitem 1</a></li> -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- One chat body, multiple copy of contents. -->
+        <div class="chat-window">
+            <div class="chat-window-background">
+                <div id="chat-room-tabs">
+                    <!-- Comment -->
+                    <div class="chat-room-tab" id="public-chat-room">
+                        Public
+                    </div>
+                    <!-- Comment -->
+                </div>
+                <hr>
+                <div class="chat-body" id="rooms-chat-body">
+                    <ul id="public-chat-body">
+                    </ul>
+                    <div id="history-bar" style="display: none"></div>
+                </div>
+                <div class="input-block">
+                    <div class="texting">
+                    </div>
+                    <textarea id="input-area" name="input-area"></textarea>
+                    <div class="texting-button">
+                        <button id="sendfile-button" name="sendfile-button" value="Send File to Friend!" class="button warning">
+                        <span class="icon mif-file-upload"></span>
+                        </button>
+                        <button id="history-button" name="history-button" value="Chat History" class="button primary">
+                        <span class="icon mif-history"></span>
+                        </button>
+                        <button id="input-button" name="input-button" value="Send" class="button success">
+                        <span class="icon mif-rocket"></span>
+                        </button>
+                        <!-- <input id="sendfile-button" type="button" name="sendfile-button" value="Send File to Friend!"> -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Profile setting part -->
+    <div id="profile" class="setup" hidden>
+        <div class="profile-body-friend">
+            <h5 class="newRoom">Add some friends!</h5>
+            <div class="add-by-input">
+                Friend's username: <input type="text" name="friend-username" id="friend-username" value="">
+                <div class="buttonManage3">
+                    <input type="button" name="submit-friend-username" id="submit-friend-username" value="Add" class="button success block-shadow-success text-shadow">
+                    <input type="button" name="return-to-chatroom" id="return-to-chatroom" value="return" class="button info block-shadow-info text-shadow">
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Dialog for adding friend message here! -->
+    <div id="friend-request-dialog" class="dialog-style">
+        </br>
+        <h5 class="newRoom"><span id="dialog-request-name"></span> wants to add you as friend!</h5>
+        <div class="buttonManage3">
+            <input type="button" name="accept" id="dialog-request-accept" value="accept" class="button success block-shadow-success text-shadow">
+            <input type="button" name="decline" id="dialog-request-decline" value="decline" class="button info block-shadow-info text-shadow">
+        </div>
+    </div>
+    <!-- Dialog for creating chat room! -->
+    <div id="create-chatroom-dialog" class="dialog-style">
+        </br>
+        <h5 class="newRoom"><span>Create a chat room!</span></h5>
+        <p>Name of the chatroom: </p><input type="text" name="chatroom-name" id="new-chatroom-name" value="">
+        <ul id="create-chatroom-onlinefriends">
+        </ul>
+        <div class="buttonManage3">
+            <input type="button" name="chatroom-confirm-button" id="chatroom-confirm-button" value="Confirm" class="button success block-shadow-success text-shadow">
+            <input type="button" name="chatroom-cancel-button" id="chatroom-cancel-button" value="Cancel" class="button info block-shadow-info text-shadow">
+        </div>
+        <!-- Username of user you want to invite: <input type="text" name="inviteuser-name" id="inviteuser-name" value="inviteuser-name"> -->
+    </div>
+    <!-- Dialog for inviting chatroom request -->
+    <div id="chatroom-invite-dialog" class="dialog-style">
+        </br>
+        <h5 class="newRoom"><span id="start-user-name"></span> wants to invite you to chatroom <span id="invite-chatroom-name"></span>!</h5>
+        <div class="buttonManage3">
+            <input type="button" name="accept" id="chatroom-invite-accept" value="accept" class="button success block-shadow-success text-shadow">
+            <input type="button" name="decline" id="chatroom-invite-decline" value="decline" class="button info block-shadow-info text-shadow">
+        </div>
+    </div>
+    <!-- Dialog for sending file -->
+    <div id="sendfile-dialog" class="dialog-style">
+        </br>
+        <h5 class="newRoom"><span>Send file to your friends!</span></h5>
+        <ul id="sendfile-onlinefriends">
+        </ul>
+        <div class="buttonManage3">
+            <input type="file" id="files" name="files[]" multiple />
+            <input type="button" id="file-submit-button" name="submit-file" value="send" class="button success block-shadow-success text-shadow">
+            <input type="button" id="file-cancel-button" name="cancel-file" value="cancel" class="button success block-shadow-success text-shadow">
+        </div>
+    </div>
+    <div id="receivefile-dialog" class="dialog-style">
+        </br>
+        <!-- <div id="sent-user-name"></div> -->
+        <a id="download-link"></a>
+        <div class="buttonManage3">
+            <input id="decline-receive-file" type="button" name="decline-receive-file" value="decline" class="button info block-shadow-info text-shadow">
+        </div>
+    </div>
+    <script src="client.js"></script>
+</body>
+
+</html>
