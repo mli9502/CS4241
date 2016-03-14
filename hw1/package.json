@@ -1,0 +1,13 @@
+{
+  "name": "GFP-4241-simple-node",
+  "version": "0.0.1",
+  "description": "WPI CS 4241 first assignment",
+  "author": "Gary Pollice (originally written in Ruby) & Hoang Ngo (Javascript)",
+  "private": true,
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "express": "~4.9.0"
+  }
+}
