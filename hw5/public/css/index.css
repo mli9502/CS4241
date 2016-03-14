@@ -1,0 +1,114 @@
+/*author: Mengwen Li*/
+body{
+    background-color: #BDC7D6;
+    font-family: 'Montserrat', sans-serif;
+}
+h1{
+    padding: 0 0 5px 0;
+    text-align: center;
+}
+#author{
+    font-size: 22px;
+    font-style: italic;
+}
+.intro{
+    width: 35%;
+    float: left;
+    border-top: 3px solid #FFF6E5;
+    margin: 0;
+    padding: 5px 10px 0 10px;
+    box-sizing: border-box;
+}
+.operation{
+    margin: 0;
+    padding: 0;
+    width: 65%;
+    float: left;
+    border-top: 3px solid #FFF6E5;
+    border-left: 3px solid #FFF6E5;
+    box-sizing: border-box;
+}
+.row{
+    text-align: right;
+    float: left;
+    width: 30%;
+}
+.button-input{
+    padding: 0 0 0 20px;
+}
+.button-input input{
+    width: 80px;
+}
+.op-header{
+    margin: 25px 0 0 0;
+    padding: 0 0 20px 10px;
+}
+.block{
+    padding-left: 20px;
+}
+#list-header{
+    padding-bottom: 10px;
+}
+
+input{
+    margin-left: 20px;
+}
+#list-button{
+    float: left;
+    margin-left: 0px;
+}
+#addMovieHeader{
+    margin-top: 40px;
+}
+.display{
+    float: left;
+    border-right: 3px solid #FFF6E5;
+    border-top: 3px solid #FFF6E5;
+    margin-top: 30px;
+    box-sizing: border-box;
+    width: 50%;
+}
+.display h3{
+    text-align: center;
+    margin-bottom: 5px;
+}
+.display input{
+    margin-right: 5px;
+    margin-top: 10px;
+}
+.filter{
+    width: 50%;
+    margin-left: auto;
+    margin-top: 30px;
+    border-top: 3px solid #FFF6E5;
+    box-sizing: border-box;
+}
+.filter h3{
+    margin-bottom: 5px;
+    text-align: center;
+}
+ul{
+    padding-left: 0px;
+    margin: 0px;
+}
+li{
+    margin: 0px;
+    list-style-type: none;
+}
+#filter_list li{
+    padding-top: 6px;
+    padding-bottom: 7px;
+    padding-left: 10px;
+    background-color: #BDC7D6;
+}
+#filter_list li:nth-child(odd){
+    background-color: #DFE2FF;
+}
+
+#display_list li{
+    background-color: #BDC7D6;
+    padding-bottom: 5px;
+}
+#display_list li:nth-child(odd){
+    background-color: #DFE2FF;
+}
