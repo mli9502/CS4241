@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<!--author: Mengwen Li-->
+<!--The link to my website is https://mli-cs4241-hw4.herokuapp.com/index.html -->
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Movie manage system</title>
+        <link rel="stylesheet" href="css/index.css">
+        <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet' type='text/css'>
+    </head>
+    <body>
+        <h1>Movie Management System<br><span id="author">author: Mengwen Li (mli2)</span></h1>
+        <div class="intro">
+            <h3>Introduction to Movie management system</h3>
+            <p>
+                This is the movie manage system for assignment 4. It contains two systems.<br>
+                The first system is implemented in file and the second system is implemented in database(sqlite3).<br>
+                The two systems are sepreate, adding and deleting operation for one system will not affect the other.<br>
+                To switch the two system, choose one in "Storage method" and click "Choose" button.<br>
+                By default, the database management system is used.<br>
+                Each movie has 3 attributes, name, rating and year.<br>
+                Valid input for year and rate should be integers greater than 0. If any invalid input is found, an error page is returned.<br>
+                Click the <em>back</em> on the returned page will bring you back to the starter page.<br>
+                The server side manages a file called <em>database.txt</em> that stores the movie informations on the file management system<br>
+                and manages a database in the <em>moviedb.sqlite</em> file using sqlite3 on the database management system.<br>
+                Add and delete operation will modify the file or the database.<br><br>
+                <b>For the filter function:</b> <br>
+                To filter the movie, you can input only name, rate or year.<br>
+                You can also input any combination of them to get a better result.<br>
+                If nothing is inputted in the filter part, all the movies will be returned.<br>
+                The filter is case insensitive.<br>
+                When doing filter by name, if a movie name contains chars in the user input string in order (not necessaryly continuous), the movie is considered valid.<br><br>
+                <b>For the add function:</b><br>
+                All three attributes must be presented. The movie will be added to "database.txt" file managed by server for the file management system.<br>
+                The movie will be added to the movie database for the database management system.<br><br>
+                <b>For the delete function:</b><br>
+                To delete a movie from the system, you can input only name, rate or year to delete a series of movies.<br>
+                You can also input any combination of them to delete a specific movie.<br><br>
+                <b>For the list funciton: </b><br>
+                When the <em>list</em> button is clicked, all the movies currently stored in <em>database.txt</em> file or in the movie database will be returned.
+            </p>
+        </div>
+        <div class="operation">
+            <div class="file-op">
+                <h3 class="op-header">Storage method</h3>
+                <form action="file-select" method="get">
+                    <input type="radio" name="storage" value="file">Use File Management System<br>
+                    <input type="radio" name="storage" value="database">Use Database Management System<br>
+                    <div class="method-button">
+                        <input type="submit" value="Choose" class="button">
+                    </div>
+                </form>
+            </div>
+
+            <h3 class="op-header">Filter the movie database</h3>
+            <form action="index" method="get" class="block">
+                <div class="row">Filter by name: <input type="text" name="name"><br></div>
+                <div class="row">Filter by rate: <input type="text" name="rating"><br></div>
+                <div class="row">Filter by year: <input type="text" name="year"><br></div>
+                <div class="button-input sp-button">
+                    <input type="submit" value="Filter" class="button">
+                </div>
+            </form>
+            <h3 class="op-header">Add a movie</h3>
+            <form action="add-movie" method="post" class="block">
+                <div class="row">name: <input type="text" name="name"><br></div>
+                <div class="row">rate: <input type="text" name="rating"><br></div>
+                <div class="row">year: <input type="text" name="year"><br></div>
+                <div class="button-input sp-button">
+                    <input type="submit" value="Add" class="button">
+                </div>
+            </form>
+            <h3 class="op-header">Delete a movie</h3>
+            <form action="del-movie" method="post" class="block">
+                <div class="row">delete by name: <input type="text" name="name"><br></div>
+                <div class="row">delete by rate: <input type="text" name="rating"><br></div>
+                <div class="row">delete by year: <input type="text" name="year"><br></div>
+                <div class="button-input sp-button">
+                    <input type="submit" value="Delete" class="button">
+                </div>
+            </form>
+            <div class="last-header">
+                <h3 class="op-header" id="list-header">List movies</h3>
+            </div>
+            <div class="last-form">
+                <form action="list-movie" method="get" class="block">
+                    <div class="button-input" id="last-button-div">
+                        <input id="list-button" type="submit" value="List" class="button">
+                    </div>
+                </form>
+            </div>
+
+        </div>
+    </body>
+</html>
