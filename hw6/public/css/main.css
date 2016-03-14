@@ -1,0 +1,270 @@
+/*Author: Mengwen Li*/
+body {
+    background: url(h1bck.jpg);
+    background-repeat: repeat-y;
+    font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+}
+header {
+    font-size: 45px;
+    font-family: 'Montserrat', sans-serif;
+    color: #EEEFF7;
+    text-align: left;
+    border-bottom: 2px solid #EEEFF7;
+}
+h1 {
+    margin: 10px 0;
+}
+
+footer{
+    text-align: center;
+    float: right;
+    color: white;
+    width: 100%;
+}
+
+table{
+    border-collapse: collapse;
+    width: 60%;
+}
+table, th, td{
+    border: 2px solid #EEEFF7;
+}
+th{
+    color: #01A2A6;
+    font-size: 20px;
+    text-align: left;
+}
+th, td{
+    width: 20%;
+}
+
+a:hover{
+    color: #2095E5;
+}
+a:active{
+    text-decoration: none;
+}
+
+.header-note {
+    font-size: 30px;
+    margin: 5px 0 5px 0;
+}
+.side-bar{
+    position: relative;
+    margin: 0 0 0 0;
+    width: 15%;
+    list-sytle-type: circle;
+    text-align: left;
+    float: left;
+    box-sizing: border-box;
+    color: #FFFFA6;
+    font-size: 20px;
+}
+.side-bar li{
+    margin: 22px 10px 15px 0;
+}
+.nev{
+    color: #FFFFA6;
+    font-size: 20px;
+    font-family: 'Lato', sans-serif;
+}
+.infos{
+    background-color: #2F2933;
+    float: right;
+    width: 85%;
+    border-left: solid 2px #EEEFF7;
+    box-sizing: border-box;
+    margin: 0 0 0 0;
+}
+.center{
+    margin: 0 0 0 30px;
+    float: left;
+    width: 64%;
+    box-sizing: border-box;
+}
+#instruction{
+    box-sizing: border-box;
+    margin-top: 35%;
+    color: #FF6138;
+}
+#drop-tar{
+    text-align: center;
+    float: left;
+    background-color: #BEEB9F;
+    width: 346px;
+    height: 262px;
+    margin-left: 20px;
+    box-sizing: border-box;
+    border: 1px solid white;
+    opacity: 0.4;
+}
+.right-bar{
+    text-align: center;
+    margin: 0 0 0 0;
+    float: right;
+    width: auto;
+    height: 262px;
+    box-sizing: border-box;
+    border: 1px solid white;
+}
+.right-bar-empty-pos-r{
+    text-align: center;
+    float: right;
+    background-color: #BEEB9F;
+    width: 346px;
+    height: 262px;
+    box-sizing: border-box;
+    border: 1px solid white;
+}
+.right-bar-empty-pos-l{
+    text-align: center;
+    float: left;
+    background-color: #BEEB9F;
+    width: 346px;
+    height: 262px;
+}
+
+/*Style for bubble demo*/
+#bubble-demo{
+    width: 70%;
+}
+.left-demo{
+    width: 50%;
+    float: left;
+}
+#demo-info{
+    font-size: 20px;
+}
+#bubble-demo-1{
+    height: 500px;
+    width: 500px;
+    border: 1px solid white;
+    border-radius: 15px;
+    text-align: center;
+}
+#bubble-demo-2{
+    height: 400px;
+    width: 400px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 25px;
+    padding: 0px;
+    border: 1px solid white;
+    box-sizing: border-box;
+    border-radius: 15px;
+    text-align: center;
+}
+#bubble-demo-3{
+    height: 300px;
+    width: 300px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 25px;
+    border: 1px solid white;
+    box-sizing: border-box;
+    border-radius: 15px;
+    text-align: center;
+}
+
+.info-header{
+    font-size: 28px;
+    font-weight: bold;
+    font-style: italic;
+    font-family: 'Quicksand', sans-serif;
+    color: #BDF271;
+}
+.info-compo{
+    margin-left: 20px;
+    font-size: 18px;
+    color: #29D9C2;
+}
+.school{
+    font-weight: bold;
+}
+.official-site a{
+    color: #FFFFA6;
+}
+.official-site a:hover{
+    color: #2095E5;
+}
+.official-site a:hover{
+    color: #2095E5;
+}
+.official-site a:visited{
+    color: #EEEFF7;
+}
+
+#projects ul{
+    margin: 0 0 0 0;
+    color: #01A2A6;
+    font-size: 20px;
+}
+
+#projects ul li{
+    margin-bottom: 20px;
+}
+
+#organization{
+    font-weight: bold;
+    font-style: italic;
+}
+
+.project-content{
+    font-size: 18px;
+    color: #29D9C2;
+    margin: 5px 0 5px 0;
+}
+
+.copyright {
+    font-size: 0.8em;
+    margin: 3px 0 0 0;
+}
+
+.demo-buttons {
+    margin-bottom: 10px;
+}
+/*Reference: http://www.bestcssbuttongenerator.com/#/23*/
+.myButton {
+	-moz-box-shadow:inset 0px 1px 0px 0px #ffffff;
+	-webkit-box-shadow:inset 0px 1px 0px 0px #ffffff;
+	box-shadow:inset 0px 1px 0px 0px #ffffff;
+	background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #ffffff), color-stop(1, #f6f6f6));
+	background:-moz-linear-gradient(top, #ffffff 5%, #f6f6f6 100%);
+	background:-webkit-linear-gradient(top, #ffffff 5%, #f6f6f6 100%);
+	background:-o-linear-gradient(top, #ffffff 5%, #f6f6f6 100%);
+	background:-ms-linear-gradient(top, #ffffff 5%, #f6f6f6 100%);
+	background:linear-gradient(to bottom, #ffffff 5%, #f6f6f6 100%);
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffff', endColorstr='#f6f6f6',GradientType=0);
+	background-color:#ffffff;
+	-moz-border-radius:6px;
+	-webkit-border-radius:6px;
+	border-radius:6px;
+	border:1px solid #dcdcdc;
+	display:inline-block;
+	cursor:pointer;
+	color:#666666;
+	font-family:Arial;
+	font-size:15px;
+	font-weight:bold;
+	padding:6px 24px;
+	text-decoration:none;
+	text-shadow:0px 1px 0px #ffffff;
+}
+.myButton:hover {
+	background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #f6f6f6), color-stop(1, #ffffff));
+	background:-moz-linear-gradient(top, #f6f6f6 5%, #ffffff 100%);
+	background:-webkit-linear-gradient(top, #f6f6f6 5%, #ffffff 100%);
+	background:-o-linear-gradient(top, #f6f6f6 5%, #ffffff 100%);
+	background:-ms-linear-gradient(top, #f6f6f6 5%, #ffffff 100%);
+	background:linear-gradient(to bottom, #f6f6f6 5%, #ffffff 100%);
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#f6f6f6', endColorstr='#ffffff',GradientType=0);
+	background-color:#f6f6f6;
+}
+.myButton:active {
+	position:relative;
+	top:1px;
+}
+
+.myButton:disabled {
+    color: #f7e8f7;
+}
