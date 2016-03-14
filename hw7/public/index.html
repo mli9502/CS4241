@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<!--author: Mengwen Li-->
+<!--The link to my website is https://mli-cs4241-hw7.herokuapp.com/index.html -->
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Movie manage system</title>
+        <link rel="stylesheet" href="css/index.css">
+        <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet' type='text/css'>
+        <script type="text/javascript" src="underscore.js"></script>
+        <script type="text/javascript" src="templates.js"></script>
+        <script type="text/javascript" src="client.js"></script>
+    </head>
+    <body>
+        <h1>Movie Management System<br><span id="author">author: Mengwen Li (mli2)</span></h1>
+        <div class="intro">
+            <h3>Introduction to Movie management system</h3>
+            <p>
+                This is the movie manage system for assignment 7. Each movie has 3 attributes, name, rating and year. All the movies currently in database is displayed when the page is loaded.<br>
+                Valid input for year and rate should be integers greater than 0. If any invalid input is found, an alert is popped<br>
+                Also, when adding a movie, if a duplicate movie in server side is found, an alert is popped.<br>
+                The server side manages a file called <em>database.json</em> that stores the movie informations.<br>
+                Add and delete operation will modify the file.<br>
+                Underscore template function is used to build the table displayed at the webpage.<br><br>
+                <b>For the filter function:</b> <br>
+                To filter the movie, you can input only name, rate or year.<br>
+                The filter result will automatically appear in the "Movies Filtered out" part as the information is inputted.<br>
+                You can also input any combination of them to get a better result.<br>
+                The filter is case insensitive.<br>
+                When doing filter by name, if a movie name contains chars in the user input string in order (not necessaryly continuous), the movie is considered valid.<br><br>
+                <b>For the add function:</b><br>
+                All three attributes must be presented. The movie will be added to "database.json" file managed by server.<br>
+                The movie will also appear in the "Movies in database" part immediately.<br>
+                If a duplicate movie is found on the server side, an alert is popped.<br><br>
+                <b>For the delete function:</b><br>
+                There are two ways to delete movies: <br>
+                First, you can input only name, rate or year to delete a series of movies or any combination of them to delete a specific movie.<br>
+                Second, you can check the checkbox and click "Delete by checkbox" button to delete the movies you selected.<br><br>
+            </p>
+        </div>
+        <div class="operation">
+
+            <h3 class="op-header">Filter the movie database</h3>
+            <div class="row">Filter by name: <input type="text" name="name" id="filter_name"><br></div>
+            <div class="row">Filter by rate: <input type="text" name="rating" id="filter_rate"><br></div>
+            <div class="row">Filter by year: <input type="text" name="year" id="filter_year"><br></div>
+            <div class="button-input sp-button">
+                <!-- <input type="submit" value="Filter" class="button" onclick="filter();"> -->
+            </div>
+
+            <h3 class="op-header" id="addMovieHeader">Add a movie</h3>
+            <div class="row">name: <input type="text" name="name" id="add_name"><br></div>
+            <div class="row">rate: <input type="text" name="rating" id="add_rate"><br></div>
+            <div class="row">year: <input type="text" name="year" id="add_year"><br></div>
+            <div class="button-input sp-button">
+                <input type="submit" value="Add" class="button" onclick="add();">
+            </div>
+
+            <h3 class="op-header">Delete a movie</h3>
+            <div class="row">delete by name: <input type="text" name="name" id="del_name"><br></div>
+            <div class="row">delete by rate: <input type="text" name="rating" id="del_rate"><br></div>
+            <div class="row">delete by year: <input type="text" name="year" id="del_year"><br></div>
+            <div class="button-input sp-button">
+                <input type="submit" value="Delete" class="button" onclick="del();">
+            </div>
+            <div class="third-part">
+                <div class="display">
+                    <h3>Movies in database</h3>
+                    <div id="display_list"></div>
+                    <!-- Filter list is next to display list, when display list is refreshed, filter list is automatically removed. -->
+                    <!-- Display list has check box infront of it. The item can be deleted using checkbox. -->
+                    <input type="submit" value="Delete by checkbox" class="button" onclick="del_ck();">
+                </div>
+                <div class="filter">
+                    <h3>Movies filtered out</h3>
+                    <div id="filter_list"></div>
+                </div>
+            </div>
+            <div id="name-list"></div>
+        </div>
+    </body>
+</html>

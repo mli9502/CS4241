@@ -1,0 +1,23 @@
+/*author: Mengwen Li*/
+body{
+    background-color: #D3CEAA;
+}
+table{
+    float: left;
+    border: 1px solid #FFF6E5;
+    border-collapse: collapse;
+    margin-left: 25%;
+    width: 50%;
+    font-size: 25px;
+}
+tr, td, th{
+    border: 1px solid black;
+    border-collapse: collapse;
+}
+a{
+    font-size: 25px;
+    margin: 50%;
+}
+a:hover{
+    color: #695D46;
+}
